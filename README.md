@@ -119,7 +119,7 @@ gcloud functions deploy looker_logs_collector \
 --ingress-settings=internal-and-gclb \
 --runtime=python39 \
 --trigger-topic=${LOOKER_LOGS_TOPIC} \
---set-env-vars=LOOKERSDK_BASE_URL=https://cloudcenatt.cloud.looker.com \
+--set-env-vars=LOOKERSDK_BASE_URL=${LOOKERSDK_BASE_URL} \
 --set-secrets="LOOKERSDK_CLIENT_ID=looker_client_id:latest" \
 --set-secrets="LOOKERSDK_CLIENT_SECRET=looker_client_secret:latest" \
 --source=. \
@@ -152,7 +152,7 @@ gcloud functions deploy looker_logs_collector \
 --ingress-settings=internal-and-gclb \
 --runtime=python39 \
 --trigger-topic=${LOOKER_LOGS_TOPIC} \
---set-env-vars=LOOKERSDK_BASE_URL=https://cloudcenatt.cloud.looker.com \
+--set-env-vars=LOOKERSDK_BASE_URL=${LOOKERSDK_BASE_URL} \
 --set-secrets="LOOKERSDK_CLIENT_ID=looker_client_id:latest" \
 --set-secrets="LOOKERSDK_CLIENT_SECRET=looker_client_secret:latest" \
 --entry-point=looker_collector_main \
